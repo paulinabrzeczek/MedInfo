@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container
+    .medicine-card
+      h1= medicine.name
+      p Opis: #{medicine.description}
+      p Producent: #{medicine.manufacturer}
+      p Kategoria: #{medicine.category}
+
+      .buttons-container
+        if user
+          a.add-review-button(href=`/medicines/${medicine.id}/reviews/add`) Dodaj opinię
+          a.edit-button(href=`/medicines/edit/${medicine.id}`) Edytuj lek
+
+        a.back-button(href="/medicines") Wróć do listy leków
+        a.download-json-button(href="/medicines/json") Pobierz dane w formacie JSON
+
+    h2 Opinie użytkowników
+    a(href=`/medicines/${medicine.id}/reviews`) Zobacz wszystkie opinie o tym leku

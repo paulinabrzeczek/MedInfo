@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Kalkulatory Zdrowotne
+
+  h2 Kalkulator BMI
+  form#bmiForm(onSubmit="calculateBMI(event)")
+    label(for="height") Wzrost (cm):
+    input#height(type="number" name="height" required)
+    br
+    label(for="weight") Waga (kg):
+    input#weight(type="number" name="weight" required)
+    br
+    button(type="submit") Oblicz BMI
+    p#bmiResult Wynik BMI:
+
+  h2 Kalkulator Podstawowej Przemiany Materii (BMR)
+  form#bmrForm(onSubmit="calculateBMR(event)")
+    label(for="weightBMR") Waga (kg):
+    input#weightBMR(type="number" name="weightBMR" required)
+    br
+    label(for="heightBMR") Wzrost (cm):
+    input#heightBMR(type="number" name="heightBMR" required)
+    br
+    label(for="age") Wiek (lat):
+    input#age(type="number" name="age" required)
+    br
+    label(for="gender") Płeć:
+    select#gender(name="gender" required)
+      option(value="male") Mężczyzna
+      option(value="female") Kobieta
+    br
+    button(type="submit") Oblicz BMR
+    p#bmrResult Wynik BMR:
+
+  // Import kalkulatorów
+  script(src="/javascripts/calculators.js")

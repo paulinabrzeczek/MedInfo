@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Dodaj opinię
+  form(action=`/medicines/${medicineId}/reviews/add`, method='POST')
+    div
+      label(for='content') Twoja opinia:
+      textarea(id='content', name='content', required)
+    div
+      label(for='recommend') Czy polecasz ten lek?
+      input(type='checkbox', id='recommend', name='recommend')
+    div
+      label(for='usage') Ile opakowań zużyłeś/zużyłaś?
+      select(id='usage', name='usage', required)
+        option(value='') -- Wybierz --
+        option(value='1') 1 opakowanie
+        option(value='2') 2 opakowania
+        option(value='3') 3 opakowania
+        option(value='4+') 4 lub więcej opakowań
+    button(type='submit') Dodaj opinię

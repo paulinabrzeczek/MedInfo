@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Edytuj lek
+  form(action=`/medicines/edit/${medicine.id}`, method="POST")
+    div
+      label(for="name") Nazwa
+      input(type="text", name="name", value=medicine.name, required)
+    div
+      label(for="description") Opis
+      input(type="text", name="description", value=medicine.description, required)
+    div
+      label(for="manufacturer") Producent:
+      input(type="text", id="manufacturer", name="manufacturer", value=medicine.manufacturer, required)
+
+    div
+      label(for="category") Kategoria:
+      input(type="text", id="category", name="category", value=medicine.category, required)
+
+    button(type="submit") Zapisz zmiany

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Opinie o leku: #{medicine.name}
+  
+  if reviews.length > 0
+    each review in reviews
+      div.review
+        p Użytkownik: #{review.user}
+        p Opinia: #{review.content}
+        p Poleca: #{review.recommend ? 'Tak' : 'Nie'}
+        p Zużyte opakowania: #{review.usage}
+        p Data: #{new Date(review.date).toLocaleString()}
+  else
+    p Brak opinii dla tego leku.
+
+  a(href=`/medicines/${medicine.id}`) Wróć do szczegółów leku

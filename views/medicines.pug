@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1 Lista Leków
+
+  table
+    thead
+      tr
+        th Nazwa
+        th Opis
+        th Kategoria
+        th Producent
+        th Akcje
+    tbody
+      each medicine in medicines
+        tr
+          td= medicine.name
+          td= medicine.description
+          td= medicine.category
+          td= medicine.manufacturer
+          td
+            a.details-button(href=`/medicines/${medicine.id}`) Szczegóły
+            if session && session.user && session.user.username
+              a.edit-button(href=`/medicines/edit/${medicine.id}`) Edytuj
+
+  .buttons
+    a.json-link(href="/medicines/json") Pokaż w formacie JSON
+    a.download-link(href="/medicines/download") Pobierz dane JSON
+
+     if session && session.user && session.user.username
+      a.add-button(href="/medicines/add") Dodaj Nowy Lek

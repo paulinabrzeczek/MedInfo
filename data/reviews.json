@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "medicineId": 1,
+    "user": "JanKowalski",
+    "content": "Bardzo skuteczny lek na ból głowy.",
+    "recommend": true,
+    "usage": "2",
+    "date": "2024-11-08T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "medicineId": 1,
+    "user": "admin",
+    "content": "Fajny",
+    "recommend": true,
+    "usage": "1",
+    "date": "2024-11-08T12:37:21.982Z"
+  },
+  {
+    "id": 3,
+    "medicineId": 1,
+    "user": "admin",
+    "content": "Dobrze kopie",
+    "recommend": true,
+    "usage": "2",
+    "date": "2024-11-08T13:00:06.095Z"
+  }
+]

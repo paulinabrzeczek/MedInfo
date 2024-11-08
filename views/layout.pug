@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title MediInfo
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1 MediInfo
+      nav
+        ul
+          li: a(href='/') Strona Główna
+          li: a(href='/medicines') Leki
+          li: a(href='/health-tips') Porady Zdrowotne
+          li: a(href='/calculators') Kalkulatory Zdrowotne
+          li: a(href='/drugs-info') Informacje o Lekach
+          li: a(href='/about') O nas
+          if (user)
+            li: a(href='/logout') Wyloguj się
+          else
+            li: a(href='/login') Zaloguj się
+    .container
+      block content
+    footer
+      p © 2024 MediInfo. Wszystkie prawa zastrzeżone.

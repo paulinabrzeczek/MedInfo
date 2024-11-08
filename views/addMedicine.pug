@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Dodaj Nowy Lek
+  form(action="/medicines/add" method="POST")
+    div
+      label(for="name") Nazwa:
+      input(type="text" id="name" name="name" required)
+    div
+      label(for="description") Opis:
+      input(type="text" id="description" name="description" required)
+    div
+      label(for="category") Kategoria:
+      input(type="text" id="category" name="category" required)
+    div
+      label(for="manufacturer") Producent:
+      input(type="text" id="manufacturer" name="manufacturer" required)
+
+    input(type="submit" value="Dodaj Lek")
